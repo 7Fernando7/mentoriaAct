@@ -241,18 +241,111 @@
       }
 
       /* Responsive */
-      @media (max-width: 900px) {
+      @media (max-width: 1024px) {
+        .container {
+          padding: 16px;
+        }
+        .hero {
+          gap: 20px;
+          padding: 32px 0;
+        }
+        .hero-left {
+          flex: 1;
+        }
+        .hero-right {
+          flex: 0.8;
+        }
+        .pricing {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .price-box {
+          min-width: auto;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 12px;
+        }
         .hero {
           flex-direction: column-reverse;
+          gap: 16px;
+          padding: 24px 0;
         }
-        .grid-3 {
-          grid-template-columns: 1fr;
+        .hero-left {
+          text-align: center;
         }
-        .grid-2 {
-          grid-template-columns: 1fr;
+        .hero-right {
+          flex: none;
+          width: 100%;
+          max-width: 320px;
+          margin: 0 auto;
         }
         .hero-visual {
-          height: 240px;
+          height: 200px;
+        }
+        h1 {
+          font-size: 1.8rem;
+        }
+        .grid-3, .grid-2 {
+          grid-template-columns: 1fr;
+        }
+        .pricing {
+          flex-direction: column;
+        }
+        .signup-form {
+          flex-direction: column;
+          gap: 8px;
+        }
+        .signup-form input {
+          width: 100%;
+        }
+        .cta-primary {
+          width: 100%;
+        }
+        .btn-cta {
+          width: 100%;
+          padding: 12px 16px;
+        }
+        .nav {
+          flex-direction: column;
+          gap: 12px;
+        }
+        .logo {
+          text-align: center;
+        }
+        nav a {
+          display: block;
+          text-align: center;
+          margin: 4px 0;
+        }
+        footer .container {
+          padding: 16px;
+        }
+        footer div[style*="flex"] {
+          flex-direction: column;
+          text-align: center;
+          gap: 8px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 8px;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+        .hero-visual {
+          height: 180px;
+        }
+        .card {
+          padding: 12px;
+        }
+        .btn-cta, .cta-primary {
+          font-size: 0.9rem;
+          padding: 10px 12px;
         }
       }
     </style>
