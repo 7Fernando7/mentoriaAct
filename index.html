@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mentoria "Como Faço Terapia" — 4ª Edição</title>
+    <meta
+      name="description"
+      content="Aprimore suas habilidades terapêuticas com Dr. Stephen Paul Adler — 12 meses, online e ao vivo. Vagas limitadas."
+    />
+
+    <!-- Google Font (opcional) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #f7f9fb;
+        --card: #ffffff;
+        --text: #102a43;
+        --muted: #546e7a;
+        --accent: #d9534f; /* cor do CTA - ajuste conforme sua identidade */
+        --accent-2: #1f8dd6;
+        --radius: 12px;
+        --maxw: 1100px;
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+      }
+      .container {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 24px;
+      }
+      header {
+        background: #01011F;
+        padding: 16px 0;
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        backdrop-filter: blur(6px);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: white;
+      }
+      nav a {
+        margin: 0 10px;
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .btn-cta {
+        background: var(--accent);
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .btn-ghost {
+        background: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        padding: 8px 12px;
+        border-radius: 8px;
+      }
+
+      /* Hero */
+      .hero {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        padding: 42px 0;
+      }
+      .hero-left {
+        flex: 1;
+      }
+      .eyebrow {
+        color: var(--accent-2);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 2rem;
+        line-height: 1.05;
+      }
+      p.lead {
+        color: var(--muted);
+        margin: 0 0 18px;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .cta-primary {
+        background: var(--accent);
+        color: #fff;
+        padding: 14px 18px;
+        border-radius: 10px;
+        border: none;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .signup-form {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .signup-form input {
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #e6eef3;
+      }
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: 0 6px 24px rgba(16, 42, 67, 0.06);
+        padding: 18px;
+      }
+
+      .hero-right {
+        flex: 0.95;
+        display: flex;
+        justify-content: center;
+      }
+      .hero-visual {
+        width: 100%;
+        max-width: 420px;
+        border-radius: 12px;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--accent-2), #6ec1ff);
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      /* Sections */
+      section {
+        padding: 28px 0;
+      }
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .objectives .card {
+        padding: 18px;
+      }
+      .objectives .card h4 {
+        margin: 0 0 8px;
+      }
+      .small {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      /* Pricing */
+      .pricing {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .price-box {
+        flex: 1;
+        min-width: 240px;
+        padding: 20px;
+        border-radius: 12px;
+        background: linear-gradient(180deg, #fff, #f9fbfd);
+        border: 1px solid rgba(0, 0, 0, 0.03);
+      }
+      .price {
+        font-size: 1.8rem;
+        color: var(--accent);
+        font-weight: 800;
+      }
+      .price-sub {
+        color: var(--muted);
+      }
+
+      /* Testimonials */
+      .testimonials {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .testimonial {
+        padding: 14px;
+        border-radius: 10px;
+        background: linear-gradient(180deg, #fff, #fcfcfd);
+        border-left: 4px solid var(--accent-2);
+      }
+      .testimonial p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      /* FAQ */
+      .faq .q {
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .faq .a {
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+
+      footer {
+        padding: 28px 0;
+        background: #01011F;
+        color: white;
+        font-size: 0.95rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .hero {
+          flex-direction: column-reverse;
+        }
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+        .hero-visual {
+          height: 240px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="logo">ACT Institute</div>
+        <div style="display: flex; align-items: center; gap: 12px">
+          <nav class="small" style="display: none">
+            <a href="#sobre">Sobre</a><a href="#objetivos">Objetivos</a
+            ><a href="#funciona">Como Funciona</a>
+          </nav>
+          <button class="btn-cta" onclick="scrollToSection('inscricao')">
+            Quero participar
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="hero-left">
+          <div class="eyebrow">Mentoria • 4ª Edição</div>
+          <h1>
+            Mentoria “Como Faço Terapia”<br /><span
+              style="color: var(--accent-2)"
+              >Aprimore suas habilidades terapêuticas com Dr. Stephen Paul
+              Adler</span
+            >
+          </h1>
+          <p class="lead">
+            Programa de 12 meses com encontros online e ao vivo pela plataforma
+            Zoom. Desenvolva a escuta ativa, as estratégias Ericksonianas e a
+            presença curadora — com demonstrações ao vivo e feedback do mentor.
+          </p>
+
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: center;
+              margin-top: 16px;
+            "
+          >
+            <button class="cta-primary" onclick="scrollToSection('inscricao')">
+              Inscreva-se agora
+            </button>
+
+            <div
+              class="card"
+              style="display: flex; align-items: center; gap: 8px"
+            >
+              <form
+                id="quickForm"
+                onsubmit="submitQuickForm(event)"
+                style="display: flex; gap: 8px; align-items: center"
+              >
+                <input
+                  type="text"
+                  name="nome"
+                  placeholder="Nome"
+                  required
+                  style="min-width: 140px"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                  required
+                />
+                <button type="submit" class="btn-cta">Enviar</button>
+              </form>
+            </div>
+          </div>
+
+          <div style="margin-top: 18px; color: var(--muted)">
+            Vagas limitadas — manutenção de turmas reduzidas para maior
+            aproveitamento.
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-visual">
+            FOTO / ILUSTRAÇÃO DO MENTOR<br /><small style="opacity: 0.9"
+              >Substitua pela imagem real</small
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- SOBRE -->
+      <section id="sobre">
+        <div class="card">
+          <h3>O que é a mentoria</h3>
+          <p class="small">
+            A mentoria Como Faço Terapia foi criada para terapeutas e
+            hipnoterapeutas que desejam aprofundar suas habilidades de conexão
+            com a mente não consciente de seus clientes e promover mudanças
+            reais e duradouras. Conduzida por Dr. Stephen Paul Adler, com mais
+            de 60 anos de experiência.
+          </p>
+          <ul style="margin-top: 10px; color: var(--muted)">
+            <li>12 meses — 24 encontros</li>
+            <li>Encontros ao vivo pelo Zoom</li>
+            <li>Gravações liberadas para revisão</li>
+            <li>Grupos com coordenador e suporte via WhatsApp</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- OBJETIVOS -->
+      <section id="objetivos" class="objectives">
+        <h3>Objetivos da mentoria</h3>
+        <div class="grid grid-3" style="margin-top: 12px">
+          <div class="card">
+            <h4>Metamodelar habilidades</h4>
+            <p class="small">
+              Modelar as habilidades terapêuticas do Dr. Adler e entender como
+              aplicá-las na prática clínica.
+            </p>
+          </div>
+          <div class="card">
+            <h4>30 estratégias Ericksonianas</h4>
+            <p class="small">
+              Estudo aprofundado das estratégias ensinadas nos módulos de
+              Hipnose Ericksoniana.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Curar os curadores</h4>
+            <p class="small">
+              Espaço para que terapeutas cuidem da própria saúde mental e
+              mantenham prática clínica saudável.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMO FUNCIONA / CRONOGRAMA -->
+      <section id="funciona">
+        <h3>Como funciona</h3>
+        <div class="grid grid-2" style="margin-top: 12px">
+          <div class="card">
+            <h4>Formato</h4>
+            <p class="small">
+              <strong>12 meses</strong> com <strong>24 encontros</strong>. Dois
+              encontros por mês, das <strong>20h às 22h30</strong> (podendo se
+              estender). Todos os encontros poderão incluir demonstração de
+              sessão ao vivo.
+            </p>
+            <p class="small">
+              As gravações ficam disponíveis para revisão. O aluno que
+              participar da demonstração preencherá um formulário uma semana
+              antes.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>Cronograma típico de uma sessão</h4>
+            <ul class="small" style="margin: 0; padding-left: 18px">
+              <li>20h00 — Introdução (5–10 min)</li>
+              <li>20h10 — Sessão ao vivo (45–60 min)</li>
+              <li>21h10 — Comentários do Dr. Stephen</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- DEPOIMENTOS -->
+      <section id="depoimentos">
+        <h3>Depoimentos</h3>
+        <div class="testimonials" style="margin-top: 12px">
+          <div class="testimonial">
+            <strong>“Aprender com o Dr. Adler é uma experiência única”</strong>
+            <p>
+              — Ex-mentorada, edição anterior. "Cada sessão transformou meus
+              atendimentos e meu olhar como terapeuta."
+            </p>
+          </div>
+          <div class="testimonial">
+            <strong
+              >“O programa me ajudou a reconectar com minha própria jornada de
+              cura.”</strong
+            >
+            <p>— Participante 3ª edição</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- INVESTIMENTO -->
+      <section id="preco">
+        <h3>Investimento</h3>
+        <div class="pricing" style="margin-top: 12px">
+          <div class="price-box">
+            <div class="price">R$ 12.000</div>
+            <div class="price-sub">ou 12x de R$ 1.200</div>
+            <p class="small" style="margin-top: 8px">
+              Programa completo de 12 meses — 24 encontros. Vagas limitadas para
+              manter qualidade técnica e acompanhamento próximo.
+            </p>
+            <div style="margin-top: 12px">
+              <button class="btn-cta" onclick="scrollToSection('inscricao')">
+                Quero me inscrever
+              </button>
+            </div>
+          </div>
+
+          <div class="card" style="min-width: 260px">
+            <h4>O que está incluído</h4>
+            <ul class="small">
+              <li>Acesso às gravações durante o período da mentoria</li>
+              <li>Coordenação de grupo e suporte via WhatsApp</li>
+              <li>Demonstrações de sessões ao vivo</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORMULÁRIO -->
+      <section id="inscricao">
+        <h3>Inscreva-se / Solicite mais informações</h3>
+        <div
+          style="display: flex; gap: 18px; flex-wrap: wrap; margin-top: 12px"
+        >
+          <div class="card" style="flex: 1; min-width: 300px">
+            <form id="mainForm" onsubmit="submitMainForm(event)">
+              <div style="display: flex; flex-direction: column; gap: 10px">
+                <label
+                  >Nome completo<input
+                    type="text"
+                    name="nome"
+                    required
+                    style="
+                      padding: 10px;
+                      border-radius: 8px;
+                      border: 1px solid #e6eef3;
+                    "
+                /></label>
+                <label
+                  >E-mail<input
+                    type="email"
+                    name="email"
+                    required
+                    style="
+                      padding: 10px;
+                      border-radius: 8px;
+                      border: 1px solid #e6eef3;
+                    "
+                /></label>
+                <label
+                  >WhatsApp<input
+                    type="text"
+                    name="whatsapp"
+                    placeholder="+55 11 9xxxx-xxxx"
+                    style="
+                      padding: 10px;
+                      border-radius: 8px;
+                      border: 1px solid #e6eef3;
+                    "
+                /></label>
+                <label
+                  >Mensagem / Perguntas<textarea
+                    name="mensagem"
+                    rows="4"
+                    style="
+                      padding: 10px;
+                      border-radius: 8px;
+                      border: 1px solid #e6eef3;
+                    "
+                  ></textarea>
+                </label>
+
+                <div style="display: flex; gap: 10px; align-items: center">
+                  <button class="btn-cta" type="submit">
+                    Enviar inscrição
+                  </button>
+                  <button
+                    type="button"
+                    class="btn-ghost"
+                    onclick="location.href='#preco'"
+                  >
+                    Ver investimento
+                  </button>
+                </div>
+                <div class="small" style="margin-top: 6px; color: var(--muted)">
+                  Ao enviar, você receberá os próximos passos por e-mail e
+                  WhatsApp.
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div style="flex: 1; min-width: 240px">
+            <div class="card">
+              <h4>Precisa de ajuda?</h4>
+              <p class="small">
+                Se preferir, envie mensagem via WhatsApp para:
+                <strong>+55 11 9XXXX-XXXX</strong> ou ligue para
+                <strong>(11) XXXX-XXXX</strong>.
+              </p>
+              <hr />
+              <h4>Diretrizes</h4>
+              <p class="small">
+                As datas podem sofrer alteração em casos excepcionais. O
+                cronograma será enviado após confirmação de inscrição.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <h3>Perguntas frequentes</h3>
+        <div class="faq" style="margin-top: 12px">
+          <div>
+            <div class="q">As sessões são gravadas?</div>
+            <div class="a">
+              Sim — todas as sessões serão gravadas e disponibilizadas para os
+              mentorados durante o período da mentoria.
+            </div>
+          </div>
+          <div>
+            <div class="q">Qual o horário das sessões?</div>
+            <div class="a">
+              Os encontros são normalmente das 20h às 22h (podendo se estender).
+              Datas e horários são enviados ao grupo.
+            </div>
+          </div>
+          <div>
+            <div class="q">Preciso participar da demonstração?</div>
+            <div class="a">
+              Não — o aluno não é obrigado a passar pela demonstração se não
+              quiser.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+          "
+        >
+          <div class="small">
+            © 2025 ACT Institute, A.C — Todos os direitos reservados
+          </div>
+          <div class="small">
+            Contato: contato@actinstitute.example | WhatsApp: +55 11 9XXXX-XXXX
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      // Quick form: abre um mailto com os dados (substituir por integração real)
+      function submitQuickForm(e) {
+        e.preventDefault();
+        const f = e.target;
+        const nome = encodeURIComponent(f.nome.value.trim());
+        const email = encodeURIComponent(f.email.value.trim());
+        const subject = encodeURIComponent(
+          "Interesse na Mentoria: Como Faço Terapia - 4ª Edição"
+        );
+        const body = encodeURIComponent(
+          `Nome: ${nome}\nE-mail: ${email}\nOrigem: QuickForm`
+        );
+        window.location.href = `mailto:contato@actinstitute.example?subject=${subject}&body=${body}`;
+        return false;
+      }
+
+      // Main form: mostra modal simples (pode integrar RD Station / Formspree / Zapier)
+      function submitMainForm(e) {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        const nome = fd.get("nome");
+        // Aqui você pode enviar a um endpoint via fetch
+        alert(
+          "Obrigado, " +
+            nome +
+            "! Recebemos sua inscrição. Em breve entraremos em contato pelo e-mail informado."
+        );
+        e.target.reset();
+        return false;
+      }
+    </script>
+  </body>
+</html>
